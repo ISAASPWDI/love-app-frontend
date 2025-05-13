@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
-import { Image, Pencil, Trash2, Save, X, Plus, Camera } from 'lucide-react';
+import { Pencil, Trash2, Save, X, Plus, Camera } from 'lucide-react';
 import { useData } from '../context/DataContext';
 import PageHeader from '../components/PageHeader';
 import ActionButton from '../components/ActionButton';
@@ -48,8 +48,8 @@ const Memories: React.FC = () => {
   return (
     <div className="page-container">
       <PageHeader 
-        title="Photo Memories" 
-        subtitle="Capture and save your special moments" 
+        title="Recuerdos fotográficos" 
+        subtitle="Guardar momentos para recordar" 
         icon={<Camera size={24} />} 
       />
       
@@ -138,15 +138,10 @@ const Memories: React.FC = () => {
           <p className="text-gray-500 italic text-center py-8 col-span-2">No memories yet. Add your first memory!</p>
         ) : (
           <AnimatePresence>
-            {memories.map((memory, index) => (
+            {memories.map((memory) => (
               <motion.div
                 key={memory.id}
-                className="card overflow-hidden flex flex-col"
-                initial={{ opacity: 0, scale: 0.8 }}
-                animate={{ opacity: 1, scale: 1 }}
-                exit={{ opacity: 0, scale: 0.8 }}
-                transition={{ delay: index * 0.1 }}
-                whileHover={{ y: -5 }}
+                className="rounded-md shadow-lg overflow-hidden flex flex-col"
               >
                 <div className="relative aspect-[4/3] overflow-hidden rounded-t-lg">
                   <img 
@@ -155,7 +150,7 @@ const Memories: React.FC = () => {
                     className="w-full h-full object-cover transition-transform duration-700 hover:scale-110"
                   />
                 </div>
-                <div className="p-3 flex-1 flex flex-col">
+                <div className="p-5 flex-1 flex flex-col">
                   {editingId === memory.id ? (
                     <div className="space-y-3 flex-1">
                       <textarea

@@ -92,8 +92,8 @@ const Quiz: React.FC = () => {
   return (
     <div className="page-container">
       <PageHeader 
-        title="Love Quiz" 
-        subtitle="Test how well you know each other" 
+        title="Prueba" 
+        subtitle="Una prueba para saber cuanto sabemos del otro dx" 
         icon={<BrainCircuit size={24} />} 
       />
       

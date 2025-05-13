@@ -54,8 +54,8 @@ const Timeline: React.FC = () => {
   return (
     <div className="page-container">
       <PageHeader 
-        title="Our Timeline" 
-        subtitle="Document your journey together" 
+        title="Línea de tiempo" 
+        subtitle="Tener documentado experiencias xd" 
         icon={<TimelineIcon size={24} />} 
       />
       

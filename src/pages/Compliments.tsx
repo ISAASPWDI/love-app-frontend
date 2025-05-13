@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
-import { Star, Trash2, Plus, X, Heart, Shuffle } from 'lucide-react';
+import { Star, Trash2, Plus, Heart, Shuffle } from 'lucide-react';
 import { useData } from '../context/DataContext';
 import PageHeader from '../components/PageHeader';
 import ActionButton from '../components/ActionButton';
@@ -45,8 +45,8 @@ const Compliments: React.FC = () => {
   return (
     <div className="page-container">
       <PageHeader 
-        title="Compliments" 
-        subtitle="Sweet things to say and remember" 
+        title="Cumplidos" 
+        subtitle="Cosas para decir y recordar xd" 
         icon={<Star size={24} />} 
       />
       

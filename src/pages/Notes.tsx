@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
-import { Heart, Pencil, Trash2, Save, X, Plus } from 'lucide-react';
+import { Pencil, Trash2, Save, X, Plus,ClipboardList } from 'lucide-react';
 import { useData, Note } from '../context/DataContext';
 import PageHeader from '../components/PageHeader';
 import ActionButton from '../components/ActionButton';
@@ -44,9 +44,9 @@ const Notes: React.FC = () => {
   return (
     <div className="page-container">
       <PageHeader 
-        title="Love Notes" 
-        subtitle="Save sweet thoughts and messages" 
-        icon={<Heart size={24} className="text-primary-600" />} 
+        title="Notas" 
+        subtitle="Guarda pensamientos, mensajes, cosas que hacer ..." 
+        icon={<ClipboardList size={24} className="text-primary-600" />} 
       />
       
       {/* Add new note form */}
