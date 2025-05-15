@@ -100,11 +100,11 @@ interface DataContextType {
 const DataContext = createContext<DataContextType | undefined>(undefined);
 
 // URLs base para conectar con el backend
-const NOTES_API_URL = 'https://love-app-backend.fly.dev/api/notes';
-const MEMORIES_API_URL = 'https://love-app-backend.fly.dev/api/memories';
-const TIMELINE_API_URL = 'https://love-app-backend.fly.dev/api/timeline';
-const COMPLIMENTS_API_URL = 'https://love-app-backend.fly.dev/api/compliments';
-const QUIZ_API_URL = 'https://love-app-backend.fly.dev/api/quiz';
+const NOTES_API_URL = 'https://love-app-backend-kq3d.onrender.com/api/notes';
+const MEMORIES_API_URL = 'https://love-app-backend-kq3d.onrender.com/api/memories';
+const TIMELINE_API_URL = 'https://love-app-backend-kq3d.onrender.com/api/timeline';
+const COMPLIMENTS_API_URL = 'https://love-app-backend-kq3d.onrender.com/api/compliments';
+const QUIZ_API_URL = 'https://love-app-backend-kq3d.onrender.com/api/quiz';
 
 // Props para el proveedor de contexto
 interface DataProviderProps {
