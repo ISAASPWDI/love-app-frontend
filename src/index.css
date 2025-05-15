@@ -1,21 +1,27 @@
-@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Cascadia+Code:ital,wght@0,200..700;1,200..700&family=Poetsen+One&display=swap');
 
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
 
+/* Body usa Poetsen One */
 body {
   @apply bg-gradient-to-br from-primary-50 to-white;
-  font-family: 'Inter', sans-serif;
+  font-family: 'Cascadia Code', cursive;
 }
 
+/* Title usa Cascadia Code */
 .title {
-  @apply font-serif text-2xl font-bold text-primary-800;
+  @apply text-2xl font-bold text-primary-800;
+  font-family: 'Cascadia Code', monospace;
 }
 
+/* Subtitle usa Cascadia Code */
 .subtitle {
-  @apply font-serif text-lg italic text-primary-600;
+  @apply text-lg italic text-primary-600;
+  font-family: 'Cascadia Code', monospace;
 }
+
 
 .card {
   @apply bg-white rounded-xl shadow-md p-4 hover:shadow-lg transition-shadow duration-300;
@@ -42,7 +48,7 @@ body {
 }
 
 .section-title {
-  @apply font-serif text-2xl font-bold text-primary-800 mb-6;
+  @apply text-2xl font-bold text-primary-800 mb-6;
 }
 
 /* Background pattern with subtle hearts */

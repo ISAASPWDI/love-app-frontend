@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import { useState, useEffect } from 'react';
 import { NavLink } from 'react-router-dom';
 import { ClipboardList, Image, Clock, Star, BrainCircuit, Menu, X } from 'lucide-react';
 import { motion, AnimatePresence } from 'framer-motion';
@@ -67,19 +67,19 @@ const Sidebar = () => {
       <AnimatePresence>
         {(isOpen || window.innerWidth >= 1024) && (
           <motion.aside
-            className="bg-gradient-to-b from-primary-700 to-primary-800 text-white w-64 min-h-screen fixed lg:sticky top-0 left-0 z-40 overflow-y-auto shadow-lg"
+            className="bg-gradient-to-b from-primary-700 to-primary-800 text-white w-64 fixed lg:sticky top-0 left-0 z-40 shadow-lg flex flex-col h-screen lg:h-screen"
             initial={{ x: window.innerWidth >= 1024 ? 0 : -320 }}
             animate={{ x: 0 }}
             exit={{ x: -320 }}
             transition={{ type: 'spring', stiffness: 300, damping: 30 }}
           >
-            <div className="p-6 space-y-8">
+            <div className="p-6 space-y-8 flex-1 flex flex-col overflow-y-auto">
               <div className="text-center p-4">
-                <h1 className="font-serif text-2xl font-bold">For You</h1>
-                <p className="text-primary-200 mt-2 italic">With all my love</p>
+                <h1 className="text-2xl font-bold">Bienvenida, Janet xd</h1>
+                <p className="text-primary-200 mt-2 italic">Un lugar bonito para ti</p>
               </div>
               
-              <nav className="space-y-2">
+              <nav className="space-y-2 flex-grow">
                 {menuItems.map((item) => (
                   <NavLink
                     key={item.path}
@@ -99,9 +99,9 @@ const Sidebar = () => {
                 ))}
               </nav>
               
-              <div className="pt-6 mt-6 border-t border-primary-600 text-center">
-                <p className="text-primary-300 text-sm mb-6">Hecho especialmente para ti :3</p>
-                <p className='text-primary-300 text-sm'>© Todos los derechos reservados xd</p>
+              <div className="pt-6 mt-auto border-t border-primary-600 text-center">
+                <p className="text-primary-300 text-sm mb-6">Made especially for you</p>
+                <p className='text-primary-300 text-sm'>© Copyright 2025. Todos los derechos reservados xd</p>
               </div>
             </div>
           </motion.aside>

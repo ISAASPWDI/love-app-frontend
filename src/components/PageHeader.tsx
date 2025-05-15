@@ -21,8 +21,8 @@ const PageHeader: React.FC<PageHeaderProps> = ({ title, subtitle, icon }) => {
             {icon}
           </div>
         )}
-        <div className='pt-4'>
-          <h1 className="font-serif text-3xl font-bold text-primary-800">{title}</h1>
+        <div className='pt-6'>
+          <h1 className="text-3xl font-bold text-primary-800">{title}</h1>
           {subtitle && <p className="text-primary-500 mt-1">{subtitle}</p>}
         </div>
       </div>
