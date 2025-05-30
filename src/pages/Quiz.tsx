@@ -68,7 +68,6 @@ const Quiz: React.FC = () => {
   const handleEditClick = (question: any) => {
     setEditingId(question.id);
     setEditQuestion(question.question);
-    setEditAnswer(question.answer);
   };
 
   const handleSaveEdit = async () => {
