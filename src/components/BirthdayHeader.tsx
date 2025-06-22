@@ -13,8 +13,8 @@ export const BirthdayHeader = ({ name }: BirthdayHeaderProps) => {
       </div>
       
       <h1 className="text-5xl md:text-6xl font-bold text-white mb-4 drop-shadow-lg">
-        Feliz Cumpleaños 
-        Janet 🎉
+        Feliz Cumpleaños <b className='hidden'>a</b>
+        {name} 🎉
       </h1>
       
       <div className="flex justify-center items-center space-x-2 text-white mt-10">
