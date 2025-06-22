@@ -98,50 +98,48 @@ const SetupForm = ({ onSetup }: { onSetup: (name: string, birthDate: string) => 
   const [name, setName] = useState('');
   const [birthDate, setBirthDate] = useState('');
 
-  const handleSubmit = (e: React.FormEvent) => {
-    e.preventDefault();
+  const handleSubmit = () => {
     if (name.trim() && birthDate) {
       onSetup(name.trim(), birthDate);
     }
   };
 
   return (
-    <form onSubmit={handleSubmit} className="space-y-6">
+    <div className="space-y-6">
       <div>
-        <label className="block text-sm font-medium text-birthday-purple mb-2">
+        <label className="block text-sm font-medium text-purple-600 mb-2">
           Tu nombre
         </label>
         <input
           type="text"
           value={name}
           onChange={(e) => setName(e.target.value)}
-          className="w-full px-4 py-3 rounded-xl border border-birthday-purple/20 focus:border-birthday-purple focus:ring-2 focus:ring-birthday-purple/20 outline-none transition-all"
-          placeholder=""
+          className="w-full px-4 py-3 rounded-xl border border-purple-200 focus:border-purple-600 focus:ring-2 focus:ring-purple-200 outline-none transition-all"
+          placeholder="Ingresa tu nombre"
           required
         />
       </div>
       
       <div>
-        <label className="block text-sm font-medium text-birthday-purple mb-2">
-          Tu fecha
+        <label className="block text-sm font-medium text-purple-600 mb-2">
+          Tu fecha de nacimiento
         </label>
         <input
           type="date"
           value={birthDate}
           onChange={(e) => setBirthDate(e.target.value)}
-          className="w-full px-4 py-3 rounded-xl border border-birthday-purple/20 focus:border-birthday-purple focus:ring-2 focus:ring-birthday-purple/20 outline-none transition-all"
+          className="w-full px-4 py-3 rounded-xl border border-purple-200 focus:border-purple-600 focus:ring-2 focus:ring-purple-200 outline-none transition-all"
           required
         />
       </div>
       
       <button
-        type="submit"
-        className="w-full bg-birthday-purple hover:bg-birthday-purple-dark text-white font-semibold py-3 px-6 rounded-xl transition-all transform hover:scale-105 shadow-lg"
+        onClick={handleSubmit}
+        className="w-full bg-purple-600 hover:bg-purple-700 text-white font-semibold py-3 px-6 rounded-xl transition-all transform hover:scale-105 shadow-lg"
       >
         Crea tu cumple ✨
       </button>
-    </form>
+    </div>
   );
 };
-
 export default Index;
