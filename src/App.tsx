@@ -1,32 +1,27 @@
-import React from 'react';
-import { Routes, Route } from 'react-router-dom';
-import Sidebar from './components/Sidebar';
-import Notes from './pages/Notes';
-import Memories from './pages/Memories';
-import Timeline from './pages/Timeline';
-import Countdown from './pages/Countdown';
-import Compliments from './pages/Compliments';
-import Quiz from './pages/Quiz';
-import { DataProvider } from './context/DataContext';
+import { Toaster } from "@/components/ui/toaster";
+import { Toaster as Sonner } from "@/components/ui/sonner";
+import { TooltipProvider } from "@/components/ui/tooltip";
+import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
+import { BrowserRouter, Routes, Route } from "react-router-dom";
+import Index from "./pages/Index";
+import NotFound from "./pages/NotFound";
 
-function App() {
-  return (
-    <DataProvider>
-      <div className="min-h-screen bg-white flex">
-        <Sidebar />
-        <main className="flex-grow p-5 lg:px-8 lg:py-6 overflow-y-auto">
-          <Routes>
-            <Route path="/" element={<Notes />} />
-            <Route path="/memories" element={<Memories />} />
-            <Route path="/timeline" element={<Timeline />} />
-            <Route path="/countdown" element={<Countdown />} />
-            <Route path="/compliments" element={<Compliments />} />
-            <Route path="/quiz" element={<Quiz />} />
-          </Routes>
-        </main>
-      </div>
-    </DataProvider>
-  );
-}
+const queryClient = new QueryClient();
+
+const App = () => (
+  <QueryClientProvider client={queryClient}>
+    <TooltipProvider>
+      <Toaster />
+      <Sonner />
+      <BrowserRouter>
+        <Routes>
+          <Route path="/" element={<Index />} />
+          {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
+          <Route path="*" element={<NotFound />} />
+        </Routes>
+      </BrowserRouter>
+    </TooltipProvider>
+  </QueryClientProvider>
+);
 
 export default App;
